@@ -1,0 +1,34 @@
+<div class="container-fluid bg-dark m-0" style="height:100vh">
+  <a href="/admin/productos"><button class="btn btn-secondary my-4">Volver</button></a>
+  <div class="row">
+    <div class="col-6 m-auto my-5">
+      <form method="post" action="/admin/productos/create" class="form">
+        <div class="mb-3">
+          <label for="nombre" class="form-label text-white">Nombre <span class="text-danger">*</span> </label>
+          <input type="text" class="form-control" id="nombre" name="nombre" required="required">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label text-white"> Categoria <span class="text-danger">*</span></label>
+          <select name="id_categoria" class="form-select" aria-label="Default select example">
+            <option selected disabled>-</option>
+            {{#each categorias}}
+            <option value="{{id}}">{{nombre}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label text-white"> Descripción <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="descripcion" name="descripcion" required="required">
+        </div>
+        <div class="mb-3">
+          <label for="precio" class="form-label text-white"> Precio <span class="text-danger">*</span></label>
+          <div class="input-group">
+          <div class="input-group-text" id="price">$</div> 
+          <input type="number" class="form-control" id="precio" name="precio" required="required">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-secondary">Agregar</button>
+      </form>
+    </div>
+  </div>
+</div>

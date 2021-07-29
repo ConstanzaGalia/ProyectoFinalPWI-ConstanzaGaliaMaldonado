@@ -1,0 +1,18 @@
+<div class="container-fluid bg-dark m-0" style="height:100vh">
+  <div class="row">
+    <div class="col-6 m-auto my-5">
+      <form method="post" action="/login" class="form">
+        <p class="text-danger">{{message}}</p>
+        <div class="mb-3">
+          <label for="email" class="form-label text-white">Email <span class="text-danger">*</span></label>
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required="required">
+        </div>
+        <div class="mb-3">
+          <label for="pass" class="form-label text-white">Password <span class="text-danger">*</span></label>
+          <input type="password" class="form-control" id="pass" name="pass" required="required">
+        </div>
+        <button type="submit" class="btn btn-secondary">Ingresar</button>
+      </form>
+    </div>
+  </div>
+</div>

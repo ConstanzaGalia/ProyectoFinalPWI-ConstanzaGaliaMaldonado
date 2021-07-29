@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+    <tr>
+      <th scope="row"> {{id}} </th>
+      <td> {{nombre}} </td>
+      <td> {{apellido}} </td>
+      <td> <a href="/users/single/{{id}}">ver mas</a> </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+  </div>
+</div>

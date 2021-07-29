@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    {{#each productos}}
+    <div class="col-4 mt-5">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"> Nombre: {{nombre}} </h5>
+          <p class="card-text"> Categoria: {{nombreCategoria}} </p>
+          <a href="/productos/singleProduct/{{id}}" class="btn btn-primary">Ver Más</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
