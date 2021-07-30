@@ -15,16 +15,34 @@ const showCreate = async (req, res) => {
 
 const createProduct = async (req, res) => {
   const producto = req.body;
-  console.log(producto)
-  const insertId = model.createProduct(producto);
-  console.log(insertId);
+  await model.createProduct(producto);
+  res.redirect('/admin/productos')
+}
+
+const deleteProduct = async (req, res) => {
+  const {id} = req.params;
+  await model.deleteProduct(id);
+  res.redirect('/admin/productos');
+}
+
+const showUpdate = async (req, res) => {
+  const {id} = req.params;
+  const [producto] = await model.getSingle(id);
+  const categorias = await modelCategorias.getCategorias();
+  res.render('adminUpdateProducto', {producto, categorias});
+}
+
+const updateProduct = async (req, res) => {
+  const producto = req.body;
+  const {id} = req.params;
+  await model.updateProduct(id, producto);
   res.redirect('/admin/productos')
 }
 
 router.get('/', getProducts);
 router.get('/create', showCreate);
 router.post('/create', createProduct);
-// router.get('/update/:id', showUpdate);
-// router.post('/update/:id', updateProduct);
-// router.get('/delete/:id', deleteProduct);
+router.get('/update/:id', showUpdate);
+router.post('/update/:id', updateProduct);
+router.get('/delete/:id', deleteProduct);
 module.exports = router;
