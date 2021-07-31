@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const model = require('../../models/productos');
 const modelCategorias = require('../../models/categorias');
+const multer = require('multer');
+const config = {dest: './public/temp'};
+const upload = multer(config);
+const service = require('../../services/productos');
 
 const getProducts = async (req, res) => {
   const productos = await model.getAll();
@@ -41,7 +45,7 @@ const updateProduct = async (req, res) => {
 
 router.get('/', getProducts);
 router.get('/create', showCreate);
-router.post('/create', createProduct);
+router.post('/create', upload.single("imagen") ,createProduct);
 router.get('/update/:id', showUpdate);
 router.post('/update/:id', updateProduct);
 router.get('/delete/:id', deleteProduct);
