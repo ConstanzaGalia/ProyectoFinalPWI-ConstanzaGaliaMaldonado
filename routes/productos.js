@@ -1,6 +1,6 @@
 const express = require ('express');
 const router = express.Router();
-const {getAll, getSingle, createProduct} = require('../models/productos');
+const {getAll, getSingle} = require('../models/productos');
 
 
 const all = async (req, res) => {

@@ -2,7 +2,7 @@
   <a href="/admin/productos"><button class="btn btn-secondary my-4">Volver</button></a>
   <div class="row">
     <div class="col-6 m-auto my-5">
-      <form method="post" action="/admin/productos/create" class="form">
+      <form method="post" action="/admin/productos/create" class="form" enctype="multipart/form-data">
         <div class="mb-3">
           <label for="nombre" class="form-label text-white">Nombre <span class="text-danger">*</span> </label>
           <input type="text" class="form-control" id="nombre" name="nombre" required="required">
@@ -26,6 +26,10 @@
           <div class="input-group-text" id="price">$</div> 
           <input type="number" class="form-control" id="precio" name="precio" required="required">
           </div>
+        </div>
+        <div class="mb-3">
+          <label for="imagen" class="form-label text-white"> Imágen <span class="text-danger">*</span></label>
+          <input type="file" class="form-control" id="imagen" name="imagen" required="required">
         </div>
         <button type="submit" class="btn btn-secondary">Agregar</button>
       </form>

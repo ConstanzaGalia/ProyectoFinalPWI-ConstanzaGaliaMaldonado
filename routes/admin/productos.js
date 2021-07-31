@@ -19,7 +19,8 @@ const showCreate = async (req, res) => {
 
 const createProduct = async (req, res) => {
   const producto = req.body;
-  await model.createProduct(producto);
+  const file = req.file;
+  await service.createProductWithImage(producto, file);
   res.redirect('/admin/productos')
 }
 

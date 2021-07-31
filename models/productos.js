@@ -1,8 +1,8 @@
 const pool = require('../utils/db');
 
 const getAll = async() => {
-    const query = "SELECT p.nombre, p.id, p.descripcion, p.precio, c.nombre AS nombreCategoria FROM ?? AS p JOIN ?? AS c ON p.id_categoria = c.id WHERE eliminado = 0";
-    const params = [process.env.T_PRODUCTOS, process.env.T_CATEGORIAS];
+    const query = "SELECT p.nombre, p.id, p.descripcion, p.precio, ip.uid, c.nombre AS nombreCategoria FROM ?? AS p JOIN ?? AS c ON p.id_categoria = c.id JOIN ?? as ip ON p.id = ip.id_producto WHERE p.eliminado = 0";
+    const params = [process.env.T_PRODUCTOS, process.env.T_CATEGORIAS, process.env.T_IMGPRODUCTOS];
     return await pool.query(query, params);
 }
 

@@ -10,10 +10,10 @@ const saveFile = (file, allowExt) => {
     const fileName = `${uid}.${extension}`;
     const fileNameOut = `./public/images/${uid}.${extension}`;
     fs.createReadStream(file.path).pipe(fs.createWriteStream(fileNameOut));
-    fs.unlink(file, (err) => console.log(err));
+    fs.unlink(file.path, (err) => console.log(err));
     return fileName;
   } catch (error) {
-    fs.unlink(file, (err) => console.log(err));
+    fs.unlink(file.path, (err) => console.log(err));
     console.log(error);
   }
 }
