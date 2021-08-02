@@ -11,8 +11,13 @@ const login = async (req, res) => {
   const {email, pass} = req.body;
   const passEncrypted = sha1(pass);
   const logged = await auth(email, passEncrypted);
-  logged.length === 0 ? res.render('login', {message: 'Email o Contraseña incorrecta'}) : res.redirect('/');
-  console.log(logged);
+  if (logged.length === 0) {
+    res.render('login', {message: 'Email o Contraseña incorrecta'})
+  }else {
+    const [{id}] = logged;
+    req.session.user = id;
+    res.redirect('/');
+  }
 }
 
 

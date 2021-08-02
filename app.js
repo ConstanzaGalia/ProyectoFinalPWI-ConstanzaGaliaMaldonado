@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv');
 const hbs = require('hbs')
+const session = require('express-session')
 dotenv.config();
 
 const indexRouter = require('./routes/index');
@@ -29,6 +30,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'passwordSecreto',
+  cookie: {maxAge: null},
+  resave: true,
+  saveUninitialized: false
+}))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
