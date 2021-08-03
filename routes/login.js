@@ -12,14 +12,14 @@ const login = async (req, res) => {
   const passEncrypted = sha1(pass);
   const logged = await auth(email, passEncrypted);
   if (logged.length === 0) {
-    res.render('login', {message: 'Email o Contraseña incorrecta'})
+    res.render('login', {message: 'Email o Contraseña incorrecta, o email no verificado'})
   }else {
-    const [{id}] = logged;
+    const [{id, admin, name}] = logged;
     req.session.user = id;
-    res.redirect('/');
+    req.session.admin = admin;
+    res.redirect('/productos');
   }
 }
-
 
 router.post('/', login)
 router.get('/', showLogin)

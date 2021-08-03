@@ -5,7 +5,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv');
 const hbs = require('hbs')
-const session = require('express-session')
+const session = require('express-session');
+const {verifyUser, verifyAdmin} = require('./middlewares/auth');
 dotenv.config();
 
 const indexRouter = require('./routes/index');
@@ -37,12 +38,16 @@ app.use(session({
   saveUninitialized: false
 }))
 
+//ALL
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/registro', registro);
-app.use('/productos', productos);
+app.use('/productos', verifyUser, productos);
 app.use('/login', login);
-app.use('/admin', adminIndex);
+
+
+// ADMIN
+app.use('/admin', verifyAdmin, adminIndex);
 app.use('/admin/productos', adminProductos);
 app.use('/admin/categorias', adminCategorias);
 app.use('/admin/usuarios', adminUsuarios);
