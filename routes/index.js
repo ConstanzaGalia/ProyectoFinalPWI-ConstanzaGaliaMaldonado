@@ -3,7 +3,8 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Entrenamiento STP' });
+  user = req.session.name;
+  res.render('index', { title: 'Entrenamiento STP', user });
 });
 
 module.exports = router;
