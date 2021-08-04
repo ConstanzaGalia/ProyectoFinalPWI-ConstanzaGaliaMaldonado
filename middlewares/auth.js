@@ -7,7 +7,7 @@ const verifyUser = (req, res, next) => {
 }
 
 const verifyAdmin = (req, res, next) => {
-  if (req.session.admin === 1) {
+  if (req.session.rol === 1) {
     next();
   } else {
     res.render('unauthorized');

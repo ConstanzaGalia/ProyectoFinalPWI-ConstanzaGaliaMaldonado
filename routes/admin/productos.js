@@ -27,6 +27,7 @@ const createProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
   const {id} = req.params;
   await model.deleteProduct(id);
+  await model.deleteImage(id);
   res.redirect('/admin/productos');
 }
 
@@ -38,9 +39,9 @@ const showUpdate = async (req, res) => {
 }
 
 const updateProduct = async (req, res) => {
-  const producto = req.body;
   const {id} = req.params;
-  await model.updateProduct(id, producto);
+  console.log(req.body)
+  await service.updateProductWithImage(id, req.body, req.file);
   res.redirect('/admin/productos')
 }
 
@@ -48,6 +49,6 @@ router.get('/', getProducts);
 router.get('/create', showCreate);
 router.post('/create', upload.single("imagen") ,createProduct);
 router.get('/update/:id', showUpdate);
-router.post('/update/:id', updateProduct);
+router.post('/update/:id', upload.single("imagen"), updateProduct);
 router.get('/delete/:id', deleteProduct);
 module.exports = router;

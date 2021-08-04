@@ -15,11 +15,11 @@ const login = async (req, res) => {
   if (logged.length === 0) {
     res.render('login', {message: 'Email o Contraseña incorrecta, o email no verificado'})
   }else {
-    const [{id, admin, name}] = logged;
+    const [{id, rol, name}] = logged;
     req.session.user = id;
-    req.session.admin = admin;
+    req.session.rol = rol;
     req.session.name = name;
-    res.redirect('/productos');
+    req.session.rol === 1 ? res.redirect('/admin') : res.redirect('/productos');
   }
 }
 
