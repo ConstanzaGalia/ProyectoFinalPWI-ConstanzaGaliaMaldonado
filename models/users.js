@@ -18,4 +18,10 @@ const auth = async (email, pass) => {
   return await pool.query(query, params);
 }
 
-module.exports = {createUser, verifyUser, auth}
+const getAllUsers = async () => {
+  const query = "SELECT * FROM ??";
+  const params = [process.env.T_USUARIOS];
+  return await pool.query(query, params);
+}
+
+module.exports = {createUser, verifyUser, auth, getAllUsers}

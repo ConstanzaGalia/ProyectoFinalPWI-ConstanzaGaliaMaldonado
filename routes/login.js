@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {auth} = require('../models/users');
 const sha1 = require('sha1');
+const {validateLogin} = require('../middlewares/usersValidator');
 
 const showLogin = (req, res) => {
   res.render('login');
@@ -22,6 +23,6 @@ const login = async (req, res) => {
   }
 }
 
-router.post('/', login)
+router.post('/', validateLogin, login)
 router.get('/', showLogin)
 module.exports = router;
