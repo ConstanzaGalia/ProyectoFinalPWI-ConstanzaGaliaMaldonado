@@ -1,0 +1,22 @@
+<div class="container-fluid bg-dark m-0" style="height:100vh">
+  <a href="/admin/usuarios"><button class="btn btn-secondary my-4">Volver</button></a>
+  <div class="row">
+    <div class="col-6 m-auto my-5">
+      <form method="POST" action="/admin/usuarios/update/{{user.id}}" class="form">
+        <div class="mb-3">
+          <label for="name" class="form-label text-white">Nombre <span class="text-danger">*</span> </label>
+          <input type="text" class="form-control" id="name" name="name" value="{{user.name}}" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label text-white"> Email <span class="text-danger">*</span> </label>
+          <input type="text" class="form-control" id="email" name="email" value="{{user.email}}" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="rol" class="form-label text-white"> Rol <span class="text-danger">*</span></label>
+          <input type="number" class="form-control" id="rol" name="rol" value="{{user.rol}}" required="required">
+        </div>
+        <button type="submit" class="btn btn-secondary">Actualizar</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,6 @@ const {verifyUser, verifyAdmin} = require('./middlewares/auth');
 dotenv.config();
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 const registro = require('./routes/registro');
 const productos = require('./routes/productos');
 const login = require('./routes/login');
@@ -40,7 +39,6 @@ app.use(session({
 
 //ALL
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/registro', registro);
 app.use('/productos', verifyUser, productos);
 app.use('/login', login);

@@ -40,7 +40,6 @@ const showUpdate = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   const {id} = req.params;
-  console.log(req.body)
   await service.updateProductWithImage(id, req.body, req.file);
   res.redirect('/admin/productos')
 }
