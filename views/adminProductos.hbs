@@ -1,18 +1,23 @@
 <div class="container">
   <a href="/admin"><button class="btn btn-secondary my-4">Volver</button></a>
+  <h1>PRODUCTOS</h1>
   <div class="row">
-    <div class="col-md-6">
-      <a href="/admin/categoria/create" class="btn btn-info my-4">Agregar Producto</a>
+    <a href="/admin/productos/create" class="btn btn-info my-4">Agregar Producto</a>
+    <div class="col-md-12">
       <table class="table">
           <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">Nombre</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Imágen</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            {{#each categorias}}
+            {{#each productos}}
             <tr>
               <th scope="row"> {{id}} </th>
                 <td> {{nombre}} </td>

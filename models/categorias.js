@@ -2,9 +2,19 @@ const pool = require('../utils/db');
 
 const getCategorias = async () => {
   try {
-    const query = "SELECT * FROM ?? WHERE eliminado = 0"
-    const params = [process.env.T_CATEGORIAS]
+    const query = "SELECT * FROM ?? WHERE eliminado = 0";
+    const params = [process.env.T_CATEGORIAS];
     return await pool.query(query, params); 
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const createCategory = async (obj) => {
+  try {
+    const query = "INSERT INTO ?? SET ?";
+    const params = [process.env.T_CATEGORIAS, obj];
+    return await pool.query(query, params);
   } catch (error) {
     console.log(error)
   }
@@ -40,4 +50,4 @@ const updateCategory = async (id, obj) => {
   }
 }
 
-module.exports = {getCategorias, deleteCategory, getSingleCategory, updateCategory}
+module.exports = {getCategorias, deleteCategory, getSingleCategory, updateCategory, createCategory}
