@@ -15,7 +15,6 @@ const deleteCategorias = async (req, res) => {
 
 const createCategories = async (req, res) => {
   const data = req.body;
-  console.log(data)
   await model.createCategory(data);
   res.redirect('/admin/categorias');
 }
@@ -24,6 +23,21 @@ const showCreateCategory = (req, res) => {
   res.render('adminCreateCategory')
 }
 
+const showUpdateCategory = async (req, res) => {
+  const {id} = req.params;
+  const [categoria] = await model.getSingleCategory(id);
+  res.render('adminUpdateCategory', {categoria});
+}
+
+const updateCategory = async (req, res) => {
+  const {id} = req.params;
+  const obj = req.body;
+  await model.updateCategory(id, obj);
+  res.redirect('/admin/categorias');
+}
+
+router.post('/update/:id', updateCategory);
+router.get('/update/:id', showUpdateCategory);
 router.get('/create', showCreateCategory);
 router.post('/create', createCategories);
 router.get('/', getAllCategories);
