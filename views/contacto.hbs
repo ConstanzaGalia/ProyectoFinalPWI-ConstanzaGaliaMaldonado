@@ -1,8 +1,21 @@
+<div class="container-fluid bg-dark p-3 text-white">
+  <div class="row">
+    <div class="col-md-8">
+      <h4 class="ms-3">Bienvenido a {{title}}</h4>
+    </div>
+    <div class="col-md-4 d-flex justify-content-end">
+      {{#if user}}
+        <h5 class="me-3"> {{user}}</h5>
+        <a href="/login/logout" class="btn btn-outline-info">Cerrar sesión</a>
+      {{/if}}
+    </div>
+  </div>
+</div>
 <!-- Page content-->
-<section class="py-5">
+<section class="py-5 bg-contact-page">
     <div class="container px-5">
         <!-- Contact form-->
-        <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+        <div class="bg-light-contact rounded-3 py-5 px-4 px-md-5 mb-5">
             <div class="text-center mb-5">
                 <div class="feature btn-color-stp bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
                 <h1 class="fw-bolder">Contactate</h1>
@@ -11,22 +24,18 @@
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
                     <form id="contactForm">
-                        <!-- Name input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="name" type="text" placeholder="Enter your name..." required="required"/>
                             <label for="name">Nombre</label>
                         </div>
-                        <!-- Email address input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="email" type="email" placeholder="name@example.com"/>
-                            <label for="email">Dirección Email</label>
+                            <label for="email">Dirección de email</label>
                         </div>
-                        <!-- Phone number input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="phone" type="tel" placeholder="3816598789" />
-                            <label for="phone">Número de Telefono</label>
+                            <label for="phone">Número de teléfono</label>
                         </div>
-                        <!-- Message input-->
                         <div class="form-floating mb-3">
                             <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem"></textarea>
                             <label for="message">Mensaje</label>

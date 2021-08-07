@@ -80,3 +80,10 @@ a {
   background-size: cover;
   color: black;
 }
+.bg-contact-page{
+  background-image: url(../images/bg-contacto.png);
+  background-size: cover;
+}
+.bg-light-contact{
+  background-color: #00394659;
+}
