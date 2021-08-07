@@ -1,3 +1,16 @@
+<div class="container-fluid bg-dark p-3 text-white">
+  <div class="row">
+    <div class="col-md-8">
+      <h4 class="ms-3">Bienvenido {{admin}}</h4>
+    </div>
+    <div class="col-md-4 d-flex justify-content-end">
+      {{#if user}}
+        <h5 class="me-3">{{user}}</h5>
+        <a href="/login/logout" class="btn btn-outline-info">Cerrar sesión</a>
+      {{/if}}
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row my-5">
     <div class="col-4">

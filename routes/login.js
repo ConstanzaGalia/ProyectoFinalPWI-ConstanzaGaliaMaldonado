@@ -19,10 +19,18 @@ const login = async (req, res) => {
     req.session.user = id;
     req.session.rol = rol;
     req.session.name = name;
-    req.session.rol === 1 ? res.redirect('/admin') : res.redirect('/productos');
+    user = req.session.name;
+    req.session.rol === 1 ? res.render('adminIndex', {admin: 'al panel de administrador', user}) : res.redirect('/');
   }
 }
 
-router.post('/', validateLogin, login)
-router.get('/', showLogin)
+const logout = (req, res) => {
+  req.session.destroy();
+  console.log('logout')
+  res.redirect('/');
+}
+
+router.get('/logout', logout);
+router.post('/', validateLogin, login);
+router.get('/', showLogin);
 module.exports = router;

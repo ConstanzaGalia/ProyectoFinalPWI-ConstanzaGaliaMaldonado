@@ -2,7 +2,7 @@ const verifyUser = (req, res, next) => {
   if (req.session.user) {
     next();
   } else {
-    res.render('login', {message: 'Iniciá sesión para ingresar'});
+    res.render('login', {message: 'Iniciá sesión para ver esta sección'});
   }
 }
 
