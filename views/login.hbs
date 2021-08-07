@@ -1,8 +1,10 @@
-<div class="container-fluid bg-dark m-0" style="height:100vh">
+<div class="container-fluid bg-login m-0" style="min-height:100vh">
   <div class="row">
     <div class="col-6 m-auto my-5">
-      <form method="post" action="/login" class="form">
-        <div class="mb-3">
+      <form method="post" action="/login" class="form card p-5 card-register">
+        <img src="/images/Logo4.png" alt="logo stp" class="logoNavbar">
+        <h4 class="my-3 text-white">Ingresá - Entrenamiento STP</h4>
+        <div class="mb-3 ">
           <label for="email" class="form-label text-white">Email <span class="text-danger">*</span></label>
           <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
         </div>
@@ -10,8 +12,12 @@
           <label for="pass" class="form-label text-white">Password <span class="text-danger">*</span></label>
           <input type="password" class="form-control" id="pass" name="pass">
         </div>
-        <p class="text-danger">{{message}}</p>
-        <button type="submit" class="btn btn-secondary">Ingresar</button>
+        {{#if message}}
+        <div class="alert alert-danger" role="alert">
+          {{message}}
+        </div>
+        {{/if}}
+        <button type="submit" class="btn btn-color-stp">Ingresar</button>
       </form>
     </div>
   </div>

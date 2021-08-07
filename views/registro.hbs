@@ -15,7 +15,11 @@
           <label for="pass" class="form-label text-white">Password <span class="text-danger">*</span></label>
           <input type="password" class="form-control" id="pass" name="pass" >
         </div>
-        <p class="text-danger">{{message}}</p>
+        {{#if message}}
+        <div class="alert alert-danger" role="alert">
+          {{message}}
+        </div>
+        {{/if}}
         <button type="submit" class="btn btn-secondary btn-color-stp">Registrarme</button>
       </form>
     </div>
