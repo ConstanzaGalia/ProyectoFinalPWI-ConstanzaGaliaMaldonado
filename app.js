@@ -13,6 +13,8 @@ const indexRouter = require('./routes/index');
 const registro = require('./routes/registro');
 const productos = require('./routes/productos');
 const login = require('./routes/login');
+const sobreNosotros = require('./routes/sobreNosotros');
+const contacto = require('./routes/contacto');
 const adminIndex = require('./routes/admin/index');
 const adminCategorias = require('./routes/admin/categorias');
 const adminProductos = require('./routes/admin/productos');
@@ -42,6 +44,8 @@ app.use('/', indexRouter);
 app.use('/registro', registro);
 app.use('/productos', verifyUser, productos);
 app.use('/login', login);
+app.use('/sobreNosotros', sobreNosotros);
+app.use('/contacto', contacto);
 
 
 // ADMIN
