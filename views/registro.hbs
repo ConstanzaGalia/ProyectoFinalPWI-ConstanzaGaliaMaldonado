@@ -1,20 +1,8 @@
-<!-- Background Video-->
-        <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="assets/mp4/bg.mp4" type="video/mp4" /></video>
-        <!-- Masthead-->
-        <div class="masthead">
-            <div class="masthead-content text-white">
-                <div class="container-fluid px-4 px-lg-0">
-                    <h1 class="fst-italic lh-1 mb-4">Our Website is Coming Soon</h1>
-                    <p class="mb-5">We're working hard to finish the development of this site. Sign up below to receive updates and to be notified when we launch!</p>
-                    
-                </div>
-            </div>
-        </div>
-{{!--  --}}
-<div class="container-fluid bg-dark m-0" style="height:100vh">
+<div class="container-fluid bg-register m-0" style="height:100vh">
   <div class="row">
     <div class="col-6 m-auto my-5">
-      <form method="post" action="/registro" class="form">
+      <form method="post" action="/registro" class="form card p-5 card-register">
+        <h4 class="my-3 text-white">Registrate - Entrenamiento STP</h4>
         <div class="mb-3">
           <label for="nombre" class="form-label text-white">Nombre <span class="text-danger">*</span> </label>
           <input type="text" class="form-control" id="name" name="name" >
@@ -28,7 +16,7 @@
           <input type="password" class="form-control" id="pass" name="pass" >
         </div>
         <p class="text-danger">{{message}}</p>
-        <button type="submit" class="btn btn-secondary">Registrarme</button>
+        <button type="submit" class="btn btn-secondary btn-color-stp">Registrarme</button>
       </form>
     </div>
   </div>

@@ -87,3 +87,10 @@ a {
 .bg-light-contact{
   background-color: #00394659;
 }
+.bg-register{
+  background-image: url(../images/pexels-victor-freitas-841130.jpg);
+  background-size: cover;
+}
+.card-register{
+  background-color: #00394685;
+}
