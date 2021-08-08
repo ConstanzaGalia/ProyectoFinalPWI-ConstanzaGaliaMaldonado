@@ -98,3 +98,20 @@ a {
   background-image: url(../images/bgLogin.jpg);
   background-size: cover;
 }
+.error-404{
+  font-family: 'Merriweather', serif;
+  font-size: 80px;
+  color: #003946;
+}
+.error-401{
+  font-family: 'Merriweather', serif;
+  font-size: 80px;
+  color:rgb(238, 50, 50);
+}
+.img-401{
+  width: 80%;
+}
+.back-index {
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+}
