@@ -1,0 +1,21 @@
+#gral config
+URL_SERVER=http://localhost
+PORT=3001
+
+#variablesMail
+MAIL_SERVICE = '***'
+MAIL_USER = '*****'
+MAIL_PASSWORD = '***'
+
+
+#variablesDataBase
+
+DB_HOST = 'localhost'
+DB_USER = 'root'
+DB_PASSWORD = ''
+DB_PORT = 3306
+DB_DATABASE = 'pwi2021'
+T_PRODUCTOS = "productos"
+T_CATEGORIAS = "categoria"
+T_USUARIOS = "usuarios"
+T_IMGPRODUCTOS = "imagenes-productos"
