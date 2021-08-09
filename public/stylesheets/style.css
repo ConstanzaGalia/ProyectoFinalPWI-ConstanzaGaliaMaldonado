@@ -115,3 +115,9 @@ a {
   font-family: 'Merriweather', serif;
   font-size: 20px;
 }
+.img-card-admin {
+  height: 154px;
+}
+.img-singleProduct{
+  border: 3px solid #003946;
+}

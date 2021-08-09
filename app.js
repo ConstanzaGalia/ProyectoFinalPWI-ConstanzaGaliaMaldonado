@@ -36,7 +36,7 @@ app.use(session({
   secret: 'passwordSecreto',
   cookie: {maxAge: null},
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
 }))
 
 //ALL

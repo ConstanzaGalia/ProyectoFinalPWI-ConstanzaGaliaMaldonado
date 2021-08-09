@@ -1,15 +1,39 @@
-<div class="container">
+<div class="container-fluid bg-dark p-3 text-white">
   <div class="row">
-    {{#each productos}}
-    <div class="col-4 mt-5">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"> Nombre: {{nombre}} </h5>
-          <p class="card-text"> Categoria: {{nombreCategoria}} </p>
-          <a href="/productos/singleProduct/{{id}}" class="btn btn-primary">Ver Más</a>
+    <div class="col-md-8">
+      <h4 class="ms-3">Bienvenido {{titulo}}</h4>
+    </div>
+    <div class="col-md-4 d-flex justify-content-end">
+      {{#if user}}
+        <h5 class="me-3">{{user}}</h5>
+        <a href="/login/logout" class="btn btn-color-stp">Cerrar sesión</a>
+      {{/if}}
+    </div>
+  </div>
+</div>
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Elegí tu entrenamiento</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Estamos para asesorarte en lo que necesites, así quedes conforme con tu elección y podamos alcanzar juntos tus objetivos</p>
+        </div>
+    </div>
+</header>
+<div class="container-fluid bg-light pb-5">
+  <div class="container">
+    <div class="row">
+      {{#each productos}}
+      <div class="col-4 mt-5">
+        <div class="card p-3 shadow" style="width: 18rem;">
+          <img src="/images/{{uid}}" class="card-img-top img-card-admin" alt="Clases">
+          <div class="card-body">
+            <h5 class="card-title">{{nombre}} </h5>
+            <p class="card-text"> {{nombreCategoria}} </p>
+            <a href="/productos/singleProduct/{{id}}" class="btn btn-color-stp">Ver Más</a>
+          </div>
         </div>
       </div>
+      {{/each}}
     </div>
-    {{/each}}
   </div>
 </div>

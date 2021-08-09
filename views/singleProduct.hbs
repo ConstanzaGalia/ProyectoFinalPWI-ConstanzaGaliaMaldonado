@@ -1,7 +1,40 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <h3> Nombre: {{producto.nombre}} </h3>
-    <h5> Categoria: {{producto.nombreCategoria}} </h5>
-    <img src=`{{producto.uid}}` alt="">
+<div class="container-fluid bg-dark p-3 text-white">
+  <div class="row">
+    <div class="col-md-8">
+      <h4 class="ms-3">Bienvenido {{titulo}}</h4>
+    </div>
+    <div class="col-md-4 d-flex justify-content-end">
+      {{#if user}}
+        <h5 class="me-3">{{user}}</h5>
+        <a href="/login/logout" class="btn btn-color-stp">Cerrar sesión</a>
+      {{/if}}
+    </div>
   </div>
 </div>
+<section class="py-5 bg-light">
+    <div class="container px-5 my-5">
+      <a href="/productos" class="btn btn-color-stp shadow">Volver a productos</a>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bolder">Entrenamiento {{producto.nombre}}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row gx-5">
+            <div class="col-12 text-center"><img class="img-fluid shadow img-singleProduct rounded-3 mb-5" src="/images/{{producto.uid}}" alt="No hay imágen" /></div>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center mb-5">
+                    <p class="lead fw-normal text-muted mb-0">{{producto.nombreCategoria}}</p>
+                    <p class="lead fw-normal text-muted mb-0">{{producto.descripcion}}</p>
+                    <p class="lead fw-normal text-muted mb-0">$ {{producto.precio}}</p>
+                </div>
+                <div class="d-grid gap-2">
+                <a href="/contacto" class="btn btn-color-stp shadow">Contratar plan de entrenamiento</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
